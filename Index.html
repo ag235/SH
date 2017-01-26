@@ -47,9 +47,10 @@
     <img v-bind:src="selectedStyleImg" class="img-responsive base" alt="">
     <img v-bind:src="selectedUpperToeMaterialImg" class="img-responsive overlay"alt="">
     <img v-bind:src="selectedUpperMidMaterialImg" class="img-responsive overlay"alt="">
+    <img v-bind:src="selectedMiddleShoeMaterialImg" class="img-responsive overlay"alt="">
+    <img v-bind:src="selectedSoleColorImg" class="img-responsive overlay"alt="">
   <!-- ADD SELECTED IMAGES FOR OVERLAY--> 
-
-    </div>
+  </div>
    </div>
    <!--Side bar-->
    <div class="col-sm-4">
@@ -70,7 +71,6 @@
                 <div v-on:click = "changeStyle(style.name)">
                   <a href="#">{{style.name}}</a>
                 </div>
-
               </li>
 
             </ul>
@@ -88,6 +88,7 @@
         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
           <div class="panel-body">
             <ul class="nav nav-pills nav-stacked">
+
                     <li v-for ="toeStyle in selectedStyleData.upperToeMaterial">
                       <div v-on:click = "selectedUpperToeMaterial = toeStyle">
                        <a href="#">{{materials[toeStyle].name}}</a>
@@ -108,7 +109,11 @@
         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
           <div class="panel-body">
             <ul class="nav nav-pills nav-stacked">
-             <li v-for ="uMidStyle in selectedStyleData.upperMidMaterial">{{materials[uMidStyle].name}}</li>
+             <li v-for ="uMidStyle in selectedStyleData.upperMidMaterial"> 
+                <div v-on:click = "selectedUpperMidMaterial = uMidStyle">
+                 <a href="#">{{materials[uMidStyle].name}}</a>
+                 </div>
+             </li>
             </ul>
           </div>
         </div>
@@ -124,7 +129,11 @@
         <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
           <div class="panel-body">
             <ul class="nav nav-pills nav-stacked">
-                 <li v-for ="MidStyle in selectedStyleData.middleShoeMaterial">{{materials[MidStyle].name}}</li>
+                 <li v-for ="MidStyle in selectedStyleData.middleShoeMaterial">
+                  <div v-on:click = "selectedMiddleShoeMaterial = MidStyle">
+                    <a href="#">{{materials[MidStyle].name}}</a>
+                  </div>
+                 </li>
             </ul>
           </div>
         </div>
@@ -140,11 +149,15 @@
         <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
           <div class="panel-body">
             <ul class="nav nav-pills nav-stacked">
-             <li v-for ="sole in selectedStyleData.soleColor">{{materials[sole].name}}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+             <li v-for ="sole in selectedStyleData.soleColor">
+             <div v-on:click = "selectedSoleColor = sole">
+               <a href="#">{{materials[sole].name}}</a>
+             </div>
+           </li> 
+         </ul>
+       </div>
+     </div>
+   </div>
       <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingSix">
           <h4 class="panel-title">
