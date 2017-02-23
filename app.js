@@ -30,6 +30,7 @@ new Vue({
     selectedSoleColor: "appelBlackSole", 
     //hue setup 
     hueRotation : 0 , 
+    saturation : 100,
 
     materials : {
       "appelBrownToe" : { 
@@ -154,8 +155,10 @@ new Vue({
       return this.materials[this.selectedSoleColor].img
 
     },
-    hueStyle : function(){ 
-      return "-webkit-filter: hue-rotate("+this.hueRotation+" deg); filter: hue-rotate("+this.hueRotation+"deg);"
+    shoeStyle : function(){ 
+      var color = "-webkit-filter: hue-rotate("+this.hueRotation+"deg) saturate("+this.saturation+"%); filter: hue-rotate("+this.hueRotation+"deg) saturate("+this.saturation+"%);"
+      console.log(color)
+      return color 
     },
   },
   methods : { 
@@ -174,9 +177,13 @@ new Vue({
      this.selectedMiddleShoeMaterial = styleData.middleShoeMaterial[0];
      this.selectedSoleColor = styleData.soleColor[0];
      this.hueRotation = 0; 
+     this.saturation = 100; 
+    },
+    setHueSaturation: function(hue, saturation){ 
+      this.hueRotation = hue; 
+      this.saturation = saturation;
     }
   }
-
 });
 
 

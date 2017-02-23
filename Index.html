@@ -46,10 +46,10 @@
   <div class = "imageParent" >
     <img v-bind:src="selectedStyleImg" class="img-responsive base" alt="">
     <!--adding hue--> 
-    <img v-bind:src="selectedUpperToeMaterialImg" v-bind:style="hueStyle" class="img-responsive overlay"alt="">
-    <img v-bind:src="selectedUpperMidMaterialImg" v-bind:style="hueStyle" class="img-responsive overlay"alt="">
-    <img v-bind:src="selectedMiddleShoeMaterialImg" v-bind:style="hueStyle" class="img-responsive overlay"alt="">
-    <img v-bind:src="selectedSoleColorImg" v-bind:style="hueStyle" class="img-responsive overlay"alt="">
+    <img v-bind:src="selectedUpperToeMaterialImg" v-bind:style="shoeStyle" class="img-responsive overlay"alt="">
+    <img v-bind:src="selectedUpperMidMaterialImg" v-bind:style="shoeStyle" class="img-responsive overlay"alt="">
+    <img v-bind:src="selectedMiddleShoeMaterialImg" v-bind:style="shoeStyle" class="img-responsive overlay"alt="">
+    <img v-bind:src="selectedSoleColorImg" v-bind:style="shoeStyle" class="img-responsive overlay"alt="">
   <!-- ADD SELECTED IMAGES FOR OVERLAY--> 
   </div>
    </div>
@@ -197,9 +197,10 @@
         <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
           <div class="panel-body">
             <ul class="nav nav-pills nav-stacked">
-              <li role="presentation" v-on:click = "hueRotation= 100"><a href="#">green</a></li>
-              <li role="presentation" v-on:click = "hueRotation= 180"><a href="#">blue</a></li>
-              <li role="presentation" v-on:click = "hueRotation= 250"><a href="#">purple</a></li>
+              <li role="presentation" v-on:click = "setHueSaturation(100, 100)"><a href="#">green</a></li>
+              <li role="presentation" v-on:click = "setHueSaturation(240, 100)"><a href="#">blue</a></li>
+              <li role="presentation" v-on:click = "setHueSaturation(330, 100)"><a href="#">purple</a></li>
+              <li role="presentation" v-on:click = "setHueSaturation(330, 80)"><a href="#">burgundy</a></li>
             </ul>
           </div>
         </div>
